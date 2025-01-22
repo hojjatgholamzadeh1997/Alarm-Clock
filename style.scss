@@ -1,0 +1,114 @@
+@import "./reset";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$color_1: #4195FC;
+$color_2: #778899;
+
+body {
+  font-family: Poppins;
+  background-color: $color_1;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .clock-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border-radius: 15px;
+    padding: 55px 20px 25px;
+    user-select: none;
+
+    img {
+      width: 75px;
+    }
+
+    h1 {
+      font-size: 27.5px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin: 25px 0;
+    }
+
+    .clock-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 7.5px;
+
+      select {
+        font-family: inherit;
+        width: 50%;
+        color: rgba(0, 0, 0, 0.9);
+        border: 1px solid $color_2;
+        padding: 7.5px;
+        outline: 0;
+        border-radius: 7.5px;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color_1;
+          border-color: $color_1;
+          color: #fff;
+          
+          option {
+            background-color: #fff;
+            color: rgba(0, 0, 0, 0.9);
+          }
+        }
+
+        &:disabled:hover {
+          background-color: #fff;
+          border: 1px solid $color_2;
+          color: rgba(0, 0, 0, 0.9);
+          cursor: default;
+        }
+      }
+    }
+
+    button {
+      font-family: inherit;
+      background-color: #fff;
+      color: rgba(0, 0, 0, 0.9);
+      width: 100%;
+      padding: 12.5px 0;
+      border: 1px solid $color_2;
+      font-size: 15px;
+      border-radius: 7.5px;
+      cursor: pointer;
+      outline: 0;
+      margin: 10px 0 0;
+
+      &:hover {
+        background-color: $color_1;
+        border-color: $color_1;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@keyframes ring  {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
