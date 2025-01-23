@@ -45,9 +45,27 @@ setInterval(() => {
 
 button.addEventListener("click", () => {
   if (selectMenu[0].value === "hour") {
-    alert("ساعت را انتخاب نمایید");
+    Swal.fire({
+      width: "250px",
+      text: "Select the hour!",
+      icon: "warning",
+      iconColor: "#ffc107",
+      timer: 5000,
+      timerProgressBar: true,
+      confirmButtonColor: "#4195FC",
+      padding: "25px 0 45px"
+    });
   } else if (selectMenu[1].value === "minute") {
-    alert("دقیقه را انتخاب نمایید");
+    Swal.fire({
+      width: "250px",
+      text: "Select the minute!",
+      icon: "warning",
+      iconColor: "#ffc107",
+      timer: 5000,
+      timerProgressBar: true,
+      confirmButtonColor: "#4195FC",
+      padding: "25px 0 45px"
+    });
   } else {
     checkState(alarmState);    
   }
@@ -61,6 +79,16 @@ function checkState(state) {
     button.style.opacity = "0.7";
     button.innerHTML = "Clear Alarm";
     alarmState = "set";
+    Swal.fire({
+      width: "250px",
+      text: "The Alarm Clock Set!",
+      icon: "success",
+      iconColor: "#198754",
+      timer: 3000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+      padding: "25px 0 50px"
+    });
   } else {
     alarmTime = "";
     selectMenu[0].disabled = false;
@@ -70,5 +98,15 @@ function checkState(state) {
     alarmState = "unset";
     ring.pause();
     imgage.style.animation = "";
+    Swal.fire({
+      width: "250px",
+      text: "The Alarm Clock Stopped!",
+      icon: "success",
+      iconColor: "#198754",
+      timer: 3000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+      padding: "25px 0 50px"
+    });
   }
 }
